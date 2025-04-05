@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
   <meta charset="UTF-8">
   <title>برای محدثه ❤️</title>
@@ -14,6 +14,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
       height: 100vh;
     }
 
@@ -27,14 +28,23 @@
       margin-bottom: 2rem;
     }
 
-    iframe {
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background: #fff;
+      color: #e91e63;
       border: none;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-      width: 80%;
-      max-width: 560px;
-      height: 315px;
-      margin: 0 auto;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #f8c3d4;
+    }
+
+    #videoContainer {
+      margin-top: 30px;
     }
 
     .credit {
@@ -48,11 +58,19 @@
   <h1>برای محدثه‌ام ❤️</h1>
   <p>این آهنگ همیشه منو یادت می‌ندازه...</p>
 
-<iframe src="https://www.youtube.com/embed/f7K5uKgtoco" allowfullscreen></iframe>
+  <button onclick="playVideo()">▶️ پخش آهنگ</button>
 
-
-
+  <div id="videoContainer"></div>
 
   <div class="credit">با عشق، مرتضی 🌸</div>
+
+  <script>
+    function playVideo() {
+      document.getElementById("videoContainer").innerHTML = `
+        <iframe width="80%" height="315" src="https://www.youtube.com/embed/f7K5uKgtoco?autoplay=1" 
+        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      `;
+    }
+  </script>
 </body>
 </html>
